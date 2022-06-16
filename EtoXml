@@ -1,20 +1,3 @@
-<apex:page controller="ETOExport" showHeader="false" sidebar="false" lightningstylesheets="true">
-    <!--apex:outputText value="{!xmlstr}" /><br /><br /-->
-    <style>
-        h1 {margin-left:27%;font-size:150%;}
-        h2 {margin-left:35%;font-weight:bold;font-size:250%;}
-        a {margin-left:38%;font-weight:bold;font-size:175%;}
-    </style>
-    <br/><br/>
-        <h1>
-            Export for ETO items on Case number:
-        </h1><br/><br/>
-        <h2>
-            {!casenum}
-    </h2><br/><br/><br/>
-            <a href="data:text/plain;charset=utf-8,{!xmlstr}" download="myETO.xml">Export</a>
-    
-    <!--apex:form>
-        <apex:outputLabel value="Download for ETO items on Case number: ">{!casenum}</apex:outputLabel>
-    </apex:form-->
+<apex:page controller="ETOExport" contentType="application/xml/#ETO__{!casenum}__{!TODAY()}.xml" cache="false" > 
+    <apex:outputText value="{!xmlstr}"/>
 </apex:page>
